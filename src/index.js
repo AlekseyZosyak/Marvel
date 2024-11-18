@@ -5,9 +5,6 @@ import MarvelService from "./services/MarvelService";
 import "./style/style.scss";
 
 
-const marvelService = new MarvelService();
-marvelService.getCharecters(1011052).then(res => console.log(res))
-
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
