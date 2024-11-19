@@ -18,7 +18,6 @@ class CharInfo extends Component {
     componentDidMount() {
         this.updateChar();
     }
-
     componentDidUpdate(prevProps) {
         if (this.props.charId !== prevProps.charId) {
             this.updateChar();
@@ -31,19 +30,25 @@ class CharInfo extends Component {
             return;
         }
         this.onCharLoading();
+        
         this.marvelService
             .getCharecters(charId)
             .then(this.onCharLoaded)
             .catch(this.onError);
+      
     }
 
 
     onCharLoaded = (char) => {
-        this.setState({ char, loading: false })
+        this.setState({ 
+            char, 
+            loading: false })
     }
 
     onCharLoading = () => {
-        this.setState({ loading: true })
+        this.setState({ 
+            loading: true 
+        })
     }
 
     onError = () => {
