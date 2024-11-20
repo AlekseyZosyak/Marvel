@@ -26,7 +26,6 @@ class CharList extends Component {
         this.marvelService.getAllCharacters(offset)
             .then(this.onCharListLoaded)
             .catch(this.onError)
-          
     }
 
     onCharListLoading = () => {
@@ -34,10 +33,10 @@ class CharList extends Component {
             newItemLoading: true
         })
     }
-    
+
     onCharListLoaded = (newCharList) => {
         let ended = false;
-        if (newCharList.lenght < 9) {
+        if (newCharList.length < 9) {
             ended = true;
         }
 
@@ -99,7 +98,8 @@ class CharList extends Component {
                 {errorMessage}
                 {spinner}
                 {content}
-                <button className="button button__main button__long"
+                <button 
+                    className="button button__main button__long"
                     disabled={newItemLoading}
                     style={{'display': charEnded ? 'none' : 'block'}}
                     onClick={() => this.onRequest(offset)}>
