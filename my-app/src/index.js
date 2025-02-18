@@ -5,7 +5,8 @@ import MarvelService from './services/MarvelService';
 import './style/style.scss';
 
 const marvelService = new MarvelService();
-marvelService.getCharacters(1011052).then(res => {console.log(res)})
+marvelService.getCharacters(1011052).then(res => {console.log(res.data.results[0].name)})
+marvelService.getAllCharacters().then(res => console.log(res))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
